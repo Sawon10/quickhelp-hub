@@ -1,4 +1,4 @@
-package com.oauth.quickhelp.quickhelp;
+package com.oauth.quickhelp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package com.oauth.quickhelp.quickhelp.controller;
+package com.oauth.quickhelp.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
