@@ -6,9 +6,16 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.annotation.web.configurers.HeadersConfigurer;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 
 @Configuration
 public class SecurityConfig {
+
+    private final AuthenticationFilter authenticationFilter;
+
+    public SecurityConfig(AuthenticationFilter authenticationFilter) {
+        this.authenticationFilter = authenticationFilter;
+    }
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
@@ -16,12 +23,12 @@ public class SecurityConfig {
                 .cors(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(
-                                "/", "/login", "/recruiters", "/helpers", "/error", "/oauth2/**",
-                                "/landing.html", "/recruiters.html", "/helpers.html", "/styles.css"
+                                "/", "/login"
                         ).permitAll()
                         .requestMatchers("/h2-console/**").permitAll()
                         .anyRequest().authenticated()
                 )
+                .addFilterBefore(authenticationFilter, BasicAuthenticationFilter.class)
                 .oauth2Login(oauth2 -> oauth2
                         .loginPage("/login")
                 )
