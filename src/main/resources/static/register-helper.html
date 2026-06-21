@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickHelp | Helper Registration</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="page-shell">
+    <header class="topbar reveal">
+        <a class="brand" href="/">
+            <span class="brand-mark">QH</span>
+            <span class="brand-copy">
+                <span class="brand-title">QuickHelp</span>
+                <span class="brand-subtitle">Service provider registration</span>
+            </span>
+        </a>
+        <nav class="nav-links">
+            <a href="/register">Choose Role</a>
+            <a href="/recruiters">Recruiter Page</a>
+            <a href="/landing.html">About QuickHelp</a>
+        </nav>
+    </header>
+
+    <main class="hero slim reveal delay-1">
+        <span class="eyebrow">Initial helper intake</span>
+        <h1>Introduce your skills and work preferences clearly.</h1>
+        <p class="lead">
+            This first page is for house-help providers who want to present themselves with clarity:
+            what work they do, where they can travel, what schedule they prefer, and how they want to work.
+        </p>
+    </main>
+
+    <section class="card helper-tone section reveal delay-2">
+        <h2 class="section-title">Service Provider Registration Form</h2>
+        <p class="inline-note">
+            Save your first draft on this device, then continue with Google so QuickHelp can connect your
+            information to a real profile later.
+        </p>
+
+        <form data-registration-role="helper">
+            <div class="form-grid">
+                <div class="field">
+                    <label for="helper-role">Role</label>
+                    <select id="helper-role" name="role" required>
+                        <option value="">Select role</option>
+                        <option value="RECRUITER">Recruiter</option>
+                        <option value="HELPER" selected>Helper</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="helper-name">Full name</label>
+                    <input id="helper-name" name="fullName" type="text" placeholder="Enter your full name">
+                </div>
+                <div class="field">
+                    <label for="helper-email">Email</label>
+                    <input id="helper-email" name="email" type="email" placeholder="name@example.com">
+                </div>
+                <div class="field">
+                    <label for="helper-phone">Phone number</label>
+                    <input id="helper-phone" name="phoneNumber" type="tel" placeholder="+91 98XXXXXX21">
+                </div>
+                <div class="field">
+                    <label for="helper-city">City / area</label>
+                    <input id="helper-city" name="cityArea" type="text" placeholder="Howrah, Garia, Noida Sector 76">
+                </div>
+                <div class="field">
+                    <label for="primary-skill">Primary service</label>
+                    <select id="primary-skill" name="primarySkill">
+                        <option value="">Select one</option>
+                        <option>Cooking</option>
+                        <option>Cleaning</option>
+                        <option>Babysitting / childcare</option>
+                        <option>Elder care</option>
+                        <option>Multi-task household support</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="experience-years">Experience level</label>
+                    <select id="experience-years" name="experienceLevel">
+                        <option value="">Select one</option>
+                        <option>Less than 1 year</option>
+                        <option>1 to 3 years</option>
+                        <option>3 to 5 years</option>
+                        <option>5+ years</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="helper-work-style">Preferred work style</label>
+                    <select id="helper-work-style" name="workStyle">
+                        <option value="">Select one</option>
+                        <option>Part-time</option>
+                        <option>Full-time</option>
+                        <option>Live-in</option>
+                        <option>Flexible / open</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="availability">Availability</label>
+                    <input id="availability" name="availability" type="text" placeholder="Morning shift, immediate joining, weekdays only">
+                </div>
+                <div class="field field-full">
+                    <label for="helper-notes">Tell us about your strengths</label>
+                    <textarea id="helper-notes" name="notes" placeholder="Mention languages, comfort with children or elders, cooking styles, travel area, or anything else that helps build trust."></textarea>
+                </div>
+            </div>
+
+            <div class="cta-row">
+                <button class="button button-primary" type="submit">Save Initial Details</button>
+            </div>
+            <div class="status-banner" data-registration-status></div>
+        </form>
+
+        <p class="draft-note">
+            This first release stores your draft locally in the browser so we can design onboarding without
+            losing the structure of what providers need to share.
+        </p>
+
+        <div class="gated-login" data-registration-login>
+            <p class="inline-note">
+                Your service-provider registration is saved on this device. Continue with Google to move
+                into account creation and the authenticated part of QuickHelp.
+            </p>
+            <div class="cta-row">
+                <a class="button button-secondary" href="/oauth2/authorization/google">Continue with Google</a>
+            </div>
+        </div>
+    </section>
+</div>
+<script src="/registration.js"></script>
+</body>
+</html>

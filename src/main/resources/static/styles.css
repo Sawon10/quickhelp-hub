@@ -323,6 +323,126 @@ a {
     color: rgba(23, 33, 43, 0.7);
 }
 
+.section-kicker {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(37, 69, 61, 0.72);
+    margin-bottom: 12px;
+}
+
+.role-choice-grid,
+.form-grid,
+.benefit-grid {
+    display: grid;
+    gap: 22px;
+}
+
+.role-choice-grid,
+.benefit-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 24px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.field label {
+    font-weight: 700;
+}
+
+.field input,
+.field select,
+.field textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 18px;
+    border: 1px solid rgba(37, 69, 61, 0.14);
+    background: rgba(255, 255, 255, 0.92);
+    color: var(--ink);
+    font: inherit;
+}
+
+.field textarea {
+    min-height: 136px;
+    resize: vertical;
+}
+
+.field-full {
+    grid-column: 1 / -1;
+}
+
+.helper-tone {
+    background: linear-gradient(145deg, rgba(244, 250, 243, 0.96), rgba(255, 255, 255, 0.9));
+}
+
+.recruiter-tone {
+    background: linear-gradient(145deg, rgba(255, 247, 240, 0.96), rgba(255, 255, 255, 0.9));
+}
+
+.inline-note,
+.draft-note {
+    color: rgba(23, 33, 43, 0.72);
+    line-height: 1.6;
+}
+
+.draft-note {
+    margin-top: 18px;
+}
+
+.status-banner {
+    display: none;
+    margin-top: 18px;
+    padding: 14px 16px;
+    border-radius: 18px;
+    background: rgba(124, 155, 123, 0.16);
+    border: 1px solid rgba(124, 155, 123, 0.28);
+    color: var(--forest);
+    font-weight: 700;
+}
+
+.status-banner.visible {
+    display: block;
+}
+
+.gated-login {
+    display: none;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(37, 69, 61, 0.12);
+}
+
+.gated-login.visible {
+    display: block;
+}
+
+.pill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.pill {
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: rgba(37, 69, 61, 0.08);
+    color: var(--forest);
+    font-weight: 700;
+}
+
+.hero.slim {
+    padding-top: 42px;
+    padding-bottom: 42px;
+}
+
 .reveal {
     animation: rise 0.75s ease both;
 }
@@ -359,7 +479,10 @@ a {
     .hero-grid,
     .split-grid,
     .feature-grid,
-    .stat-band {
+    .stat-band,
+    .role-choice-grid,
+    .benefit-grid,
+    .form-grid {
         grid-template-columns: 1fr;
     }
 

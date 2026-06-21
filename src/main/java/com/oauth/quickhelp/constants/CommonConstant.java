@@ -20,4 +20,6 @@ public class CommonConstant {
 
     public static final String USER_ROLE = "userRole";
     public static final String ROLE_ID = "roleId";
+
+    public static final String REGISTRATION_DRAFT = "REGISTRATION_DRAFT";
 }

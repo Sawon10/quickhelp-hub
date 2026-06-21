@@ -21,18 +21,24 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         return httpSecurity
                 .cors(AbstractHttpConfigurer::disable)
+                .addFilterBefore(authenticationFilter, BasicAuthenticationFilter.class)
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(
-                                "/", "/login"
+                                "/", "/login", "/recruiters", "/helpers", "/error", "/oauth2/**",
+                                "/api/registration/**",
+                                "/register", "/register/recruiter", "/register/helper",
+                                "/landing.html", "/recruiters.html", "/helpers.html",
+                                "/register.html", "/register-recruiter.html", "/register-helper.html",
+                                "/styles.css", "/registration.js"
                         ).permitAll()
                         .requestMatchers("/h2-console/**").permitAll()
                         .anyRequest().authenticated()
                 )
-                .addFilterBefore(authenticationFilter, BasicAuthenticationFilter.class)
                 .oauth2Login(oauth2 -> oauth2
                         .loginPage("/login")
                 )
                 .csrf(csrf -> csrf
+                        .ignoringRequestMatchers("/api/registration/**")
                         .ignoringRequestMatchers("/h2-console/**")
                 )
                 .headers(headers -> headers
@@ -44,3 +50,4 @@ public class SecurityConfig {
                 .build();
     }
 }
+

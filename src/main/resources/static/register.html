@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickHelp | Registration</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="page-shell">
+    <header class="topbar reveal">
+        <a class="brand" href="/">
+            <span class="brand-mark">QH</span>
+            <span class="brand-copy">
+                <span class="brand-title">QuickHelp</span>
+                <span class="brand-subtitle">Initial onboarding for both sides</span>
+            </span>
+        </a>
+        <nav class="nav-links">
+            <a href="/landing.html">About QuickHelp</a>
+            <a href="/recruiters">Recruiters</a>
+            <a href="/helpers">Helpers</a>
+        </nav>
+    </header>
+
+    <main class="hero slim reveal delay-1">
+        <span class="eyebrow">Step 1 of onboarding</span>
+        <h1>Choose the registration path that matches your role.</h1>
+        <p class="lead">
+            QuickHelp needs different initial details from people hiring help and the service providers
+            offering that help. Start with the right intake page, save your draft locally, and then
+            continue into sign-in and deeper profile setup.
+        </p>
+    </main>
+
+    <section class="role-choice-grid section">
+        <article class="card recruiter-tone reveal delay-1">
+            <div class="section-kicker">For users and recruiters</div>
+            <h2>I want to hire or shortlist house help</h2>
+            <p>
+                Share your area, household need, preferred schedule, and service type so QuickHelp can
+                shape a cleaner onboarding path for you.
+            </p>
+            <div class="pill-list">
+                <span class="pill">Family details</span>
+                <span class="pill">Shift preference</span>
+                <span class="pill">Service need</span>
+            </div>
+            <div class="cta-row">
+                <a class="button button-primary" href="/register/recruiter">Open Recruiter Registration</a>
+            </div>
+        </article>
+
+        <article class="card helper-tone reveal delay-2">
+            <div class="section-kicker">For service providers</div>
+            <h2>I provide house help services</h2>
+            <p>
+                Introduce your skills, working style, service area, and availability so families can
+                understand your fit before a conversation starts.
+            </p>
+            <div class="pill-list">
+                <span class="pill">Skills</span>
+                <span class="pill">Availability</span>
+                <span class="pill">Work preference</span>
+            </div>
+            <div class="cta-row">
+                <a class="button button-primary" href="/register/helper">Open Helper Registration</a>
+            </div>
+        </article>
+    </section>
+
+    <section class="benefit-grid section">
+        <article class="card reveal delay-2">
+            <h2>What this first version handles</h2>
+            <ul class="list">
+                <li>Collects initial details separately for recruiters and providers.</li>
+                <li>Saves a local draft in the browser so people do not lose their first input.</li>
+                <li>Sets up a clean next step into Google login and deeper profile creation.</li>
+            </ul>
+        </article>
+        <article class="card reveal delay-3">
+            <h2>What we can add next</h2>
+            <ul class="list">
+                <li>Persist the form data to the database after authentication.</li>
+                <li>Assign app roles like recruiter or helper automatically.</li>
+                <li>Redirect each person to a role-specific dashboard after sign-in.</li>
+            </ul>
+        </article>
+    </section>
+
+    <section class="card section reveal delay-3 gated-login" data-login-panel>
+        <h2>Already registered?</h2>
+        <p class="inline-note">
+            If you already saved your initial details on this device, continue into Google login to attach
+            that registration to your QuickHelp account.
+        </p>
+        <div class="cta-row">
+            <a class="button button-primary" href="/oauth2/authorization/google">Login with Google</a>
+        </div>
+    </section>
+</div>
+<script src="/registration.js"></script>
+</body>
+</html>

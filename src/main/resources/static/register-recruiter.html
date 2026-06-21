@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickHelp | Recruiter Registration</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="page-shell">
+    <header class="topbar reveal">
+        <a class="brand" href="/">
+            <span class="brand-mark">QH</span>
+            <span class="brand-copy">
+                <span class="brand-title">QuickHelp</span>
+                <span class="brand-subtitle">Recruiter registration</span>
+            </span>
+        </a>
+        <nav class="nav-links">
+            <a href="/register">Choose Role</a>
+            <a href="/helpers">Helper Page</a>
+            <a href="/landing.html">About QuickHelp</a>
+        </nav>
+    </header>
+
+    <main class="hero slim reveal delay-1">
+        <span class="eyebrow">Initial recruiter intake</span>
+        <h1>Start your hiring profile before you search.</h1>
+        <p class="lead">
+            This first step captures the essentials: who is hiring, what kind of help is needed, when the
+            support is required, and the practical expectations around schedule and budget.
+        </p>
+    </main>
+
+    <section class="card recruiter-tone section reveal delay-2">
+        <h2 class="section-title">Recruiter Registration Form</h2>
+        <p class="inline-note">
+            Save this draft on your device now, then continue with Google when you are ready to attach it
+            to a real QuickHelp account.
+        </p>
+
+        <form data-registration-role="recruiter">
+            <div class="form-grid">
+                <div class="field">
+                    <label for="recruiter-role">Role</label>
+                    <select id="recruiter-role" name="role" required>
+                        <option value="">Select role</option>
+                        <option value="RECRUITER" selected>Recruiter</option>
+                        <option value="HELPER">Helper</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="recruiter-name">Full name</label>
+                    <input id="recruiter-name" name="fullName" type="text" placeholder="Enter your full name">
+                </div>
+                <div class="field">
+                    <label for="recruiter-email">Email</label>
+                    <input id="recruiter-email" name="email" type="email" placeholder="name@example.com">
+                </div>
+                <div class="field">
+                    <label for="recruiter-phone">Phone number</label>
+                    <input id="recruiter-phone" name="phoneNumber" type="tel" placeholder="+91 98XXXXXX21">
+                </div>
+                <div class="field">
+                    <label for="recruiter-city">City / area</label>
+                    <input id="recruiter-city" name="cityArea" type="text" placeholder="Kolkata, Salt Lake">
+                </div>
+                <div class="field">
+                    <label for="household-type">Household type</label>
+                    <select id="household-type" name="householdType">
+                        <option value="">Select one</option>
+                        <option>Family home</option>
+                        <option>Working couple</option>
+                        <option>Single professional</option>
+                        <option>Elder care household</option>
+                        <option>Agency / recruiter</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="service-need">Service needed</label>
+                    <select id="service-need" name="serviceNeed">
+                        <option value="">Select one</option>
+                        <option>Cooking</option>
+                        <option>Cleaning</option>
+                        <option>Babysitting / childcare</option>
+                        <option>Elder care</option>
+                        <option>Multi-task household support</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="work-style">Work style</label>
+                    <select id="work-style" name="workStyle">
+                        <option value="">Select one</option>
+                        <option>Part-time</option>
+                        <option>Full-time</option>
+                        <option>Live-in</option>
+                        <option>Flexible / open</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="budget-range">Budget range</label>
+                    <input id="budget-range" name="budgetRange" type="text" placeholder="For example 12,000 - 18,000">
+                </div>
+                <div class="field field-full">
+                    <label for="recruiter-notes">Notes about your requirement</label>
+                    <textarea id="recruiter-notes" name="notes" placeholder="Describe timing, responsibilities, age group support, language preference, or anything else that matters."></textarea>
+                </div>
+            </div>
+
+            <div class="cta-row">
+                <button class="button button-primary" type="submit">Save Initial Details</button>
+            </div>
+            <div class="status-banner" data-registration-status></div>
+        </form>
+
+        <p class="draft-note">
+            This version stores your draft locally in the browser. The next step can connect it to a real
+            account and save it in the database.
+        </p>
+
+        <div class="gated-login" data-registration-login>
+            <p class="inline-note">
+                Your recruiter registration is saved on this device. Continue with Google to move into
+                account creation and the authenticated part of QuickHelp.
+            </p>
+            <div class="cta-row">
+                <a class="button button-secondary" href="/oauth2/authorization/google">Continue with Google</a>
+            </div>
+        </div>
+    </section>
+</div>
+<script src="/registration.js"></script>
+</body>
+</html>
